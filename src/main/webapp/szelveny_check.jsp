@@ -22,20 +22,22 @@
                 double negyedik = Math.floor(Math.random() * 100)+1;
                 double otodik = Math.floor(Math.random() * 100)+1;
 
-
                 Cookie ck = new Cookie("ck","gepi");
                 ck.setMaxAge(24*60*60*7);
                 response.addCookie(ck);
             %>
-            Szelvéyn információk:<br>
+
+            Szelvény információk:<br>
             Kitöltés típusa: ${param.type}<br>
             Szelvény érvényessége: ${param.valid} hetes<br><hr>
             Számai: <br>
+
             <%= elso %>,
             <%= masodik %>,
             <%= harmadik %>,
             <%= negyedik %>,
             <%= otodik %>,<br>
+
             <input type="submit" value="Gépi szelvény feladása">
         </form>
 
@@ -45,20 +47,35 @@
             Cookie ck = new Cookie("ck","kezi");
             ck.setMaxAge(24*60*60*7);
             response.addCookie(ck);%>
-
+        <c:choose>
+            <c:when test="${param.valid eq \"1\"}">
+                <%
+                    Cookie ckvalid = new Cookie("ckvalid","1");
+                    ck.setMaxAge(24*60*60*7);
+                    response.addCookie(ckvalid);%>
+            </c:when>
+            <c:otherwise>
+                <%
+                    Cookie ckvalid = new Cookie("ckvalid","5");
+                    ck.setMaxAge(24*60*60*7);
+                    response.addCookie(ckvalid);%>
+            </c:otherwise>
+        </c:choose>
         <form method="post" action="kezi.jsp">
             Minden sorban válaszzon a számok közül egyet! Összesen 5-t.
             <table>
                 <tr>
                     <td>
-                        <input type="number" name="elso" max="90" > <br>
-                        <input type="number" name="masodik" max="90" ><br>
-                        <input type="number" name="harmadik" max="90" ><br>
-                        <input type="number" name="negyedik" max="90" ><br>
-                        <input type="number" name="otodik" max="90" ><br>
+                        <input type="number" name="elso"  min="0" max="90" > <br>
+                        <input type="number" name="masodik" min="0" max="90" ><br>
+                        <input type="number" name="harmadik" min="0" max="90" ><br>
+                        <input type="number" name="negyedik" min="0" max="90" ><br>
+                        <input type="number" name="otodik" min="0" max="90" ><br>
                     </td>
                 </tr>
             </table>
+
+
             <input type="submit" value="Szelvény feladása">
         </form>
         <c:if test="${!empty param.errorMsg}">
@@ -66,6 +83,8 @@
             ${param.errorMsg}
 
         </c:if>
+
+
     </c:otherwise>
 </c:choose>
 </body>

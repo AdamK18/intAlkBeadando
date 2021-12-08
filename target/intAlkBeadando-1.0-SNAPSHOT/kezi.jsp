@@ -9,20 +9,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>Kézi lottószelvény</title>
 </head>
 <body>
 <c:choose>
     <c:when test="${empty param.elso || empty param.masodik || empty param.harmadik || empty param.negyedik || empty param.otodik }">
-        <jsp:forward page="szelveny.jsp">
+        <jsp:forward page="szelveny_check.jsp">
             <jsp:param name="errorMsg" value="Minden sorban válassz számot"/>
         </jsp:forward>
     </c:when>
     <c:otherwise>
         <form action="feladas.jsp" method="post">
             Szelvény információk:<br>
-            Kitöltés típusa: ${param.type}<br>
-            Szelvény érvényessége: ${cookie.ck} hetes<br><hr>
+            Kitöltés típusa: ${cookie.ck.value}<br>
+            Szelvény érvényessége: ${cookie.ckvalid.value} hetes<br><hr>
             Számai: <br>
                 ${param.elso},
                 ${param.masodik},

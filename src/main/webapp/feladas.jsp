@@ -10,7 +10,7 @@
 <html>
 
 <head>
-    <title>Bejelentkez&eacute;s ellenőrz&eacute;se</title>
+    <title>Bejelentkezés ellenőrzése</title>
     <style type="text/css">
         body {
             background-color: #ffffff;
@@ -20,7 +20,7 @@
 <body>
 <h3 align=center> Üdvözlöm <i> <%=session.getAttribute("validUser") %> </i>!</h3>
 
-<form method="post" action="szelveny.jsp">
+<form method="post" action="szelveny_check.jsp">
     Kitöltés típusa:
     <table>
         <tr>
