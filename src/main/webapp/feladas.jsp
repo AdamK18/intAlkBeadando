@@ -46,6 +46,9 @@
     <input type="submit" value="Választ">
 </form>
 
+<form method="post" action="login.jsp">
+    <input type="submit" value="Kijelentkezés">
+</form>
 
 
 </body>
