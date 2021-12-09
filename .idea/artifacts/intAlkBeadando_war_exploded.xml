@@ -15,6 +15,10 @@
           <element id="module-output" name="intAlkBeadando" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.derby:derby:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyshared:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbytools:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyclient:10.15.2.0" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.2" />
         </element>
