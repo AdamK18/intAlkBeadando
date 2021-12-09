@@ -10,10 +10,12 @@ git commit -m "message" -> Committolja a változtatásokat. Ezeket lehet majd fe
 git push -> Felküldi a github repo-ba a committokat.  
 git checkout develop -> Develop branch-re váltás  
 git checkout -b develop -> Develop branch létrehozása a mostani branch-ből és váltás a develop-ra  
-git list -> Listázza milyen branch-ek elérhetőek  
+git branch -> Listázza milyen branch-ek elérhetőek  
 git push --set-upstream origin feature -> Branch pusholása github repo-ba úgy, hogy a "feature" branch még csak a gépeden létezik, a github nem tud róla.
 
 Pl. Ezt a módosítást úgy küldöm fel, hogy: A master branchen vagyok ami már létezik Github-on  
 git add --all  
 git commit -m "modified readme file"  
 git push
+
+Start derby: java -jar derbyrun.jar server start

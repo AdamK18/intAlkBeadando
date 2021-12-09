@@ -7,10 +7,14 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 %>
+<sql:query dataSource="${users}" var="user">
+    SELECT * from USERS where USERNAME='${param.userName}' and PASSWORD='${param.password}'
+</sql:query>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,13 +37,13 @@
     </c:when>
     <c:otherwise>
         <c:choose>
-            <c:when test="${param.password eq \"1234\"}">
+            <c:when test="${user.rowCount ne 0}">
                 <% session.setAttribute("validUser", request.getParameter("userName"));%>
                 <c:redirect url="/feladas.jsp" />
             </c:when>
             <c:otherwise>
                 <c:redirect url="/login.jsp" >
-                    <c:param name="errorMsg" value="A megadott jelszó helytelen. Probálja meg a '1234' jelszóval."/>
+                    <c:param name="errorMsg" value="A megadott adatokkal nincsen egyezés. Kérem regisztráljon!"/>
                 </c:redirect>
             </c:otherwise>
         </c:choose>
