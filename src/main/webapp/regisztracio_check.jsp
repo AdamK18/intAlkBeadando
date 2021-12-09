@@ -18,22 +18,22 @@
 <body>
 <c:choose>
     <c:when test="${(empty param.email) || (empty param.password) || (empty param.password2)}">
-        <jsp:forward page="regisztracio.jsp" >
-            <jsp:param name="errorMsg" value="Felhazsnálónévként adjon meg egy érvényes e-mail címet!"/>
+        <c:redirect url="/regisztracio.jsp" >
+            <c:param name="errorMsg" value="Felhazsnálónévként adjon meg egy érvényes e-mail címet!"/>
 
             <jsp:param name="errorMsg1" value="A jelszavának legalább 6 karakter hosszúnak kell lenni, továbbá tartalmazzon betűt és minimum egy számjegyet!"/>
 
-        </jsp:forward>
+        </c:redirect>
     </c:when>
     <c:otherwise>
         <c:choose>
             <c:when test="${param.password2 eq param.password}">
-                <jsp:forward page="login.jsp" />
+                <c:redirect url="/login.jsp" />
             </c:when>
             <c:otherwise>
-                <jsp:forward page="regisztracio.jsp" >
-                    <jsp:param name="errorMsg" value="A 2 jelszónak egyeznie kell!"/>
-                </jsp:forward>
+                <c:redirect url="/regisztracio.jsp" >
+                    <c:param name="errorMsg" value="A 2 jelszónak egyeznie kell!"/>
+                </c:redirect>
             </c:otherwise>
         </c:choose>
     </c:otherwise>

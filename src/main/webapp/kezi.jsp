@@ -18,9 +18,9 @@
 <body>
 <c:choose>
     <c:when test="${empty param.elso || empty param.masodik || empty param.harmadik || empty param.negyedik || empty param.otodik }">
-        <jsp:forward page="szelveny_check.jsp">
-            <jsp:param name="errorMsg" value="Minden sorban válassz számot"/>
-        </jsp:forward>
+        <c:redirect url="/szelveny_check.jsp">
+            <c:param name="errorMsg" value="Minden sorban válassz számot"/>
+        </c:redirect>
     </c:when>
     <c:otherwise>
         <form action="feladas.jsp" method="post">

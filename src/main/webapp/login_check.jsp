@@ -6,12 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1250"/>
@@ -27,20 +27,20 @@
 
 <c:choose>
     <c:when test="${(empty param.userName) || (empty param.password)}">
-        <jsp:forward page="login.jsp" >
-            <jsp:param name="errorMsg1" value="Valós felhasznalói név és jelszó megadása kötelező."/>
-        </jsp:forward>
+        <c:redirect url="/login.jsp" >
+            <c:param name="errorMsg1" value="Valós felhasznalói név és jelszó megadása kötelező."/>
+        </c:redirect>
     </c:when>
     <c:otherwise>
         <c:choose>
             <c:when test="${param.password eq \"1234\"}">
                 <% session.setAttribute("validUser", request.getParameter("userName"));%>
-                <jsp:forward page="feladas.jsp" />
+                <c:redirect url="/feladas.jsp" />
             </c:when>
             <c:otherwise>
-                <jsp:forward page="login.jsp" >
-                    <jsp:param name="errorMsg" value="A megadott jelszó helytelen. Probálja meg a '1234' jelszóval."/>
-                </jsp:forward>
+                <c:redirect url="/login.jsp" >
+                    <c:param name="errorMsg" value="A megadott jelszó helytelen. Probálja meg a '1234' jelszóval."/>
+                </c:redirect>
             </c:otherwise>
         </c:choose>
     </c:otherwise>
