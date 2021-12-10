@@ -19,62 +19,51 @@
 
 <c:choose>
     <c:when test="${param.type eq \"gepi\"}">
-        <form method="post" action="feladas.jsp">
-            <% double elso = Math.floor(Math.random() * 100)+1;
-                double masodik = Math.floor(Math.random() * 100+1);
-                double harmadik = Math.floor(Math.random() * 100)+1;
-                double negyedik = Math.floor(Math.random() * 100)+1;
-                double otodik = Math.floor(Math.random() * 100)+1;
-
-                Cookie ck = new Cookie("ck","gepi");
-                ck.setMaxAge(24*60*60*7);
-                response.addCookie(ck);
+        <form method="post" action="eredmeny.jsp">
+            <%
+                int szam1 = (int)Math.floor(Math.random() * 100)+1;
+                int szam2 = (int)Math.floor(Math.random() * 100+1);
+                int szam3 = (int)Math.floor(Math.random() * 100)+1;
+                int szam4 = (int)Math.floor(Math.random() * 100)+1;
+                int szam5 = (int)Math.floor(Math.random() * 100)+1;
             %>
-
             Szelvény információk:<br>
             Kitöltés típusa: ${param.type}<br>
             Számai: <br>
-
-            <%= elso %>,
-            <%= masodik %>,
-            <%= harmadik %>,
-            <%= negyedik %>,
-            <%= otodik %>,<br>
-
+            <%= szam1 %>,
+            <%= szam2 %>,
+            <%= szam3 %>,
+            <%= szam4 %>,
+            <%= szam5 %>,
+            <br>
+            <input type="hidden" name="szam1" value="<%=szam1%>">
+            <input type="hidden" name="szam2" value="<%=szam2%>">
+            <input type="hidden" name="szam3" value="<%=szam3%>">
+            <input type="hidden" name="szam4" value="<%=szam4%>">
+            <input type="hidden" name="szam5" value="<%=szam5%>">
             <input type="submit" value="Gépi szelvény feladása">
         </form>
 
     </c:when>
     <c:otherwise>
-        <%
-            Cookie ck = new Cookie("ck","kezi");
-            ck.setMaxAge(24*60*60*7);
-            response.addCookie(ck);
-        %>
         <form method="post" action="kezi.jsp">
             Minden sorban válaszzon a számok közül egyet! Összesen 5-t.
             <table>
                 <tr>
                     <td>
-                        <input type="number" name="elso"  min="0" max="90" > <br>
-                        <input type="number" name="masodik" min="0" max="90" ><br>
-                        <input type="number" name="harmadik" min="0" max="90" ><br>
-                        <input type="number" name="negyedik" min="0" max="90" ><br>
-                        <input type="number" name="otodik" min="0" max="90" ><br>
+                        <input type="number" name="szam1" min="0" max="90"><br>
+                        <input type="number" name="szam2" min="0" max="90" ><br>
+                        <input type="number" name="szam3" min="0" max="90" ><br>
+                        <input type="number" name="szam4" min="0" max="90" ><br>
+                        <input type="number" name="szam5" min="0" max="90" ><br>
                     </td>
                 </tr>
             </table>
-
-
-            <input type="submit" value="Szelvény feladása">
+            <input type="submit">
         </form>
         <c:if test="${!empty param.errorMsg}">
-
             ${param.errorMsg}
-
         </c:if>
-
-
     </c:otherwise>
 </c:choose>
 </body>

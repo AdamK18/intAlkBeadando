@@ -6,17 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 %>
 <sql:setDataSource
-        var="users"
+        var="db"
         driver="org.apache.derby.jdbc.ClientDriver"
         url="jdbc:derby://localhost:1527/lotto"
-        scope="application"
+        scope="session"
 />
 <!DOCTYPE html>
 <html>

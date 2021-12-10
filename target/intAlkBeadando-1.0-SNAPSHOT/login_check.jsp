@@ -12,7 +12,7 @@
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
 %>
-<sql:query dataSource="${users}" var="user">
+<sql:query dataSource="${db}" var="user">
     SELECT * from USERS where USERNAME='${param.userName}' and PASSWORD='${param.password}'
 </sql:query>
 <!DOCTYPE html>
