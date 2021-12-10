@@ -19,3 +19,8 @@ git commit -m "modified readme file"
 git push
 
 Start derby: java -jar derbyrun.jar server start
+
+jdbc:derby://localhost:1527/lotto
+connection tpye: default
+Apache Derby Remote
+No auth

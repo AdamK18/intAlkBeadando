@@ -42,7 +42,7 @@
             <td>Ötödik nyertes szám: <input type="number" name="nyero5"></td>
         </tr>
         <tr>
-            <td><input type="submit" name="elkuld" value="Nyertes szelvények keresése"></td>
+            <td><input type="submit" name="elkuld" value="Nyertes szelvény frissítése"></td>
         </tr>
     </table>
 </form>
@@ -64,24 +64,7 @@
                         VALUES (${param.nyero1}, ${param.nyero2}, ${param.nyero3}, ${param.nyero4}, ${param.nyero5})
                     </sql:update>
                     <p> A nyertes számok: <c:out value="${param.nyero1}"/>, <c:out value="${param.nyero2}"/>, <c:out value="${param.nyero3}"/>, <c:out value="${param.nyero4}"/>, <c:out value="${param.nyero5}"/></p>
-                    <%--<sql:query var="nyert" dataSource="${db}">
-                        SELECT * FROM LOTTO
-                    </sql:query>
-                    <p>A nyeretes(ek):</p>
-                    <c:forEach var="row" items="${nyert.rows}">
-                        <c:choose>
-                            <c:when test="${(row.szam1 == param.nyero1 || row.szam2 == param.nyero1 || row.szam3 == param.nyero1 || row.szam4 == param.nyero1 || row.szam5 == param.nyero1) &&
-                             (row.szam1 == param.nyero2 || row.szam2 == param.nyero2 || row.szam3 == param.nyero2 || row.szam4 == param.nyero2 || row.szam5 == param.nyero2) &&
-                             (row.szam1 == param.nyero3 || row.szam2 == param.nyero3 || row.szam3 == param.nyero3 || row.szam4 == param.nyero3 || row.szam5 == param.nyero3) &&
-                             (row.szam1 == param.nyero4 || row.szam2 == param.nyero4 || row.szam3 == param.nyero4 || row.szam4 == param.nyero4 || row.szam5 == param.nyero4) &&
-                             (row.szam1 == param.nyero5 || row.szam2 == param.nyero5 || row.szam3 == param.nyero5 || row.szam4 == param.nyero5 || row.szam5 == param.nyero5)}">
-                                <sql:query var="szemely" dataSource="${db}">
-                                    SELECT * FROM USERS WHERE ID = ${row.user_id}
-                                </sql:query>
-                                <p><c:out value="${szemely.rows[0].username}"/></p>
-                            </c:when>
-                        </c:choose>
-                    </c:forEach>--%>
+
                 </c:otherwise>
             </c:choose>
 
