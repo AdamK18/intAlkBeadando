@@ -32,17 +32,6 @@
             </td>
         </tr>
     </table>
-    Szelvény  típusa:
-    <table>
-        <tr>
-            <td>
-                1 hetes<input type="radio" name="valid" value="1"> <br><hr>
-            </td>
-            <td>
-                5 hetes <input type="radio" name="valid" value="5"><br><hr>
-            </td>
-        </tr>
-    </table>
     <input type="submit" value="Választ">
 </form>
 

@@ -33,7 +33,6 @@
 
             Szelvény információk:<br>
             Kitöltés típusa: ${param.type}<br>
-            Szelvény érvényessége: ${param.valid} hetes<br><hr>
             Számai: <br>
 
             <%= elso %>,
@@ -50,21 +49,8 @@
         <%
             Cookie ck = new Cookie("ck","kezi");
             ck.setMaxAge(24*60*60*7);
-            response.addCookie(ck);%>
-        <c:choose>
-            <c:when test="${param.valid eq \"1\"}">
-                <%
-                    Cookie ckvalid = new Cookie("ckvalid","1");
-                    ck.setMaxAge(24*60*60*7);
-                    response.addCookie(ckvalid);%>
-            </c:when>
-            <c:otherwise>
-                <%
-                    Cookie ckvalid = new Cookie("ckvalid","5");
-                    ck.setMaxAge(24*60*60*7);
-                    response.addCookie(ckvalid);%>
-            </c:otherwise>
-        </c:choose>
+            response.addCookie(ck);
+        %>
         <form method="post" action="kezi.jsp">
             Minden sorban válaszzon a számok közül egyet! Összesen 5-t.
             <table>

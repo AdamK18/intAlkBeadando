@@ -26,7 +26,6 @@
         <form action="feladas.jsp" method="post">
             Szelvény információk:<br>
             Kitöltés típusa: ${cookie.ck.value}<br>
-            Szelvény érvényessége: ${cookie.ckvalid.value} hetes<br><hr>
             Számai: <br>
                 ${param.elso},
                 ${param.masodik},
