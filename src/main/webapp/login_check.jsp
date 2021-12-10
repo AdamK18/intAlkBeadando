@@ -8,6 +8,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<sql:setDataSource
+        var="db"
+        driver="org.apache.derby.jdbc.ClientDriver"
+        url="jdbc:derby://localhost:1527/lotto"
+        scope="session"
+/>
 <sql:query dataSource="${db}" var="user">
     SELECT * from USERS where USERNAME='${param.userName}' and PASSWORD='${param.password}'
 </sql:query>
@@ -35,7 +41,17 @@
         <c:choose>
             <c:when test="${user.rowCount ne 0}">
                 <% session.setAttribute("validUser", request.getParameter("userName"));%>
-                <c:redirect url="/feladas.jsp" />
+                <c:forEach var="row" items="${user.rows}">
+                    <c:choose>
+                        <c:when test="${row.admin == 'true'}">
+                            <c:redirect url="admin.jsp"/>
+                        </c:when>
+                        <c:when test="${row.admin == 'false'}">
+                            <c:redirect url="/feladas.jsp" />
+                        </c:when>
+                    </c:choose>
+                </c:forEach>
+
             </c:when>
             <c:otherwise>
                 <c:redirect url="/login.jsp" >
