@@ -11,25 +11,24 @@
 <html>
 <head><title>Regisztrációs Form</title></head>
 <body BGCOLOR="#FDF5E6">
-<c:choose>
-    <c:when test="${pageContext.request.method eq 'POST'}">
+<%--<c:choose>
+    <c:when test="${pageContext.request.method eq 'POST'}">--%>
         <h1 ALIGN="CENTER">Regisztrációs Form</h1>
-        <form ACTION="regisztracio.jsp" method="post">
-
+        <form ACTION="regisztracio_check.jsp" method="post">
             <table>
                 <tr>
-                    <td>* Email cím: </td>
-                    <td> <input type="email" name="email"  size="20" min="5" pattern="^[a-z0-9]+@[a-z0-9.-]+\.[a-z]{2,4}$"> </td><br>
+                    <td>* Felhasználónév: </td>
+                    <td> <input type="textbox" name="user"  size="20" min="5"> </td><br>
                     <c:if test="${! empty param.errorMsg}" >
                         <font color="red"> <b> ${param.errorMsg}     </b></font>
                     </c:if>
                 </tr>
                 <tr>
                     <td> *Jelszó: </td>
-                    <td> <input type="password" name="password" value="" size="20" pattern="(?=.*\d)(?=.*[a-z]).{6,}"> </td>
+                    <td> <input type="password" name="password" value="" size="20"> </td>
 
                     <td> *Jelszó megerősítése: </td>
-                    <td> <input type="password" name="password2" value="" size="20" pattern="(?=.*\d)(?=.*[a-z]).{6,}"> </td>
+                    <td> <input type="password" name="password2" value="" size="20"> </td>
 
                     <c:if test="${! empty param.errorMsg1}" >
                         <font color="red"> <b> ${param.errorMsg1}     </b></font>
@@ -37,12 +36,12 @@
                 </tr>
 
                 <tr>
-                    <td><input type="checkbox" name="tarol"/> Megjegyezze <br/></td>
+                    <%--<td><input type="checkbox" name="tarol"/> Megjegyezze <br/></td>--%>
                     <td><input type="submit" value="Regisztráció"> </td>
                 </tr>
             </table>
         </form>
-    </c:when>
+    <%--</c:when>
     <c:otherwise>
         <c:if test="${!empty param.tarol}">
             <% String nev="Ismeretlen";
@@ -63,6 +62,6 @@
         </c:if>
         <h1>Köszönjük, hogy regisztrált. Az eredményt <a href="teszt.jsp"> itt </a> tudja kipróbálni.</h1>
     </c:otherwise>
-</c:choose>
+</c:choose>--%>
 </body>
 </html>
