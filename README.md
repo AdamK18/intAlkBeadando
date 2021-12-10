@@ -1,5 +1,10 @@
 # intAlkBeadando
 
+Csapat:
+Polesznyák Márton
+Köhler Tamás
+Klöczl Ádám
+
 Hogyan használd a gitet:  
 Navigálj a projekted mappájába command line-ban. Először másold ki az elérési útját majd másold be így. Pl.: cd C:\Users\kloczl\Desktop\intAlkBeadando  
 basic git parancsok:  
