@@ -48,10 +48,10 @@
                 <tr>
                     <td>
                         <input type="number" name="szam1" min="0" max="90"><br>
-                        <input type="number" name="szam2" min="0" max="90" ><br>
-                        <input type="number" name="szam3" min="0" max="90" ><br>
-                        <input type="number" name="szam4" min="0" max="90" ><br>
-                        <input type="number" name="szam5" min="0" max="90" ><br>
+                        <input type="number" name="szam2" min="0" max="90"><br>
+                        <input type="number" name="szam3" min="0" max="90"><br>
+                        <input type="number" name="szam4" min="0" max="90"><br>
+                        <input type="number" name="szam5" min="0" max="90"><br>
                     </td>
                 </tr>
             </table>

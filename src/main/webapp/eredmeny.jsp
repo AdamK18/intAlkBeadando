@@ -29,8 +29,8 @@
         ${param.szam4},
         ${param.szam5},<br>
         <c:choose>
-            <c:when test="${param.SZAM1 eq lotto.rows[0].SZAM1 && param.SZAM2 eq lotto.rows[0].SZAM2 && param.SZAM3 eq lotto.rows[0].SZAM3
-                && param.SZAM4 eq lotto.rows[0].SZAM4 && param.SZAM5 eq lotto.rows[0].SZAM5}">
+            <c:when test="${param.szam1 eq lotto.rows[0].SZAM1 && param.szam2 eq lotto.rows[0].SZAM2 && param.szam3 eq lotto.rows[0].SZAM3
+                && param.szam4 eq lotto.rows[0].SZAM4 && param.szam5 eq lotto.rows[0].SZAM5}">
                 Gratulálok! Ön nyert!
                 <br>
             </c:when>

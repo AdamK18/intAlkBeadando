@@ -7,10 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-    request.setCharacterEncoding("UTF-8");
-    response.setCharacterEncoding("UTF-8");
-%>
 <html>
 <head>
     <title>Szelvények</title>
@@ -52,10 +48,10 @@
                 <tr>
                     <td>
                         <input type="number" name="szam1" min="0" max="90"><br>
-                        <input type="number" name="szam2" min="0" max="90" ><br>
-                        <input type="number" name="szam3" min="0" max="90" ><br>
-                        <input type="number" name="szam4" min="0" max="90" ><br>
-                        <input type="number" name="szam5" min="0" max="90" ><br>
+                        <input type="number" name="szam2" min="0" max="90"><br>
+                        <input type="number" name="szam3" min="0" max="90"><br>
+                        <input type="number" name="szam4" min="0" max="90"><br>
+                        <input type="number" name="szam5" min="0" max="90"><br>
                     </td>
                 </tr>
             </table>

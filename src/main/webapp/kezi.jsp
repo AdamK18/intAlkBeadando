@@ -27,12 +27,12 @@
                 ${param.szam2},
                 ${param.szam3},
                 ${param.szam4},
-                ${param.szam5},<br>
+                ${param.szam5}<br>
 
             <input type="hidden" name="szam1" value="${param.szam1}">
             <input type="hidden" name="szam2" value="${param.szam2}">
             <input type="hidden" name="szam3" value="${param.szam3}">
-            <input type="hidden" name="szam4" value="${param.szam4}>">
+            <input type="hidden" name="szam4" value="${param.szam4}">
             <input type="hidden" name="szam5" value="${param.szam5}">
             <input type="submit" value="Kézi szelvény feladása">
         </form>
