@@ -42,7 +42,7 @@
             <td>Ötödik nyertes szám: <input type="number" name="nyero5"></td>
         </tr>
         <tr>
-            <td><input type="submit" name="elkuld" value="Nyertes szelvények keresése"></td>
+            <td><input type="submit" name="elkuld" value="Nyertes szelvény frissítése"></td>
         </tr>
     </table>
 </form>
@@ -64,7 +64,7 @@
                         VALUES (${param.nyero1}, ${param.nyero2}, ${param.nyero3}, ${param.nyero4}, ${param.nyero5})
                     </sql:update>
                     <p> A nyertes számok: <c:out value="${param.nyero1}"/>, <c:out value="${param.nyero2}"/>, <c:out value="${param.nyero3}"/>, <c:out value="${param.nyero4}"/>, <c:out value="${param.nyero5}"/></p>
-                    
+
                 </c:otherwise>
             </c:choose>
 
